@@ -1,0 +1,6 @@
+.npm init to install package.json it will not work as react like npm install 
+.then after package.json create in cmd : npm install chalk to create a node module (read properties of chalk from npm website)
+.now create a.mjs file and import chalk from 'chalk' and use it as importing so .mjs file is used for ES6 module system.
+.now in package.json add "type":"module" to use .js file as ES6 module system.
+now in cmd: npm install express to create express module and use it in  file as ES6 module system.
+.then : npm i is-odd to install is-odd module and use it in file as ES6 module system. to check whether number is odd or even. like import isOdd from 'is-odd'; console.log(isOdd(3)); // true

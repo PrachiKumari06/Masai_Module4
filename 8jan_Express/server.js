@@ -1,0 +1,9 @@
+import express from 'express'   //as we use importing so in normal.js we use require but for import either .mjs or in package.json use "type": "module",
+const app = express()
+const port = 4000
+
+app.get('/', (req, res) => res.send('Hello World! this is homepage'))
+app.get('/contact', (req, res) => res.send('Hello World! this is contact page'))
+app.get('/about', (req, res) => res.json({message:'<h2>Hello World! this is about page</h2>'}))
+ 
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
