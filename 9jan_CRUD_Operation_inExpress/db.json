@@ -1,0 +1,33 @@
+[
+    {
+  "id": 1,
+  "name": "Rahul",
+  "course": "Computer Science",
+  "year": 2
+},
+{
+    "id":2,
+    "name":"Anjali",
+    "course":"Mathematics", 
+    "year":1
+},
+{
+    "id":3,
+    "name":"Vikram",
+    "course":"Physics",
+    "year":3
+},
+{
+    "id":4,
+    "name":"Sneha",
+    "course":"Chemistry",
+    "year":2
+},
+{
+    "id":5,
+    "name":"Amit",
+    "course":"Biology",
+    "year":1
+}
+
+]
