@@ -1,0 +1,31 @@
+create table student(id serial primary key ,name varchar(20),email varchar(30),age integer,course varchar, created_at timestamp default current_timestamp);
+insert into student(name, email, age, course) values
+('Rahul Sharma', 'rahul.sharma@gmail.com', 21, 'Computer Science'),
+('Anjali Verma', 'anjali.verma@gmail.com', 19, 'Information Technology'),
+('Amit Singh', 'amit.singh@gmail.com', 22, 'Computer Science'),
+('Neha Gupta', 'neha.gupta@gmail.com', 20, 'Electronics'),
+('Rohit Mehta', 'rohit.mehta@gmail.com', 23, 'Mechanical Engineering'),
+('Prachi Kumari','pk@dev.com',24,'Computer Sceince');
+select* from student;
+select* from student where age>20;
+select  name,email from student;
+select* from student where course='Computer Science';
+update student set age=34 where name='Amit Singh';
+update student set course='Civil Engineering' where course='Electronics';
+delete from student  where id=2;
+delete from student  where age<18;
+---advance quesry :-------------------------
+
+select count(*) from student;
+select avg(age) from student;
+select max(age) from student;
+select min(age) from student;
+select course,count(*) as student_count from student group by course ;
+select count(*) from student where age>20;
+---Step 3: Grouping & Filtering
+select course,count(*) as student_count from student group by course having count(*)>1;
+select course,count(*) as student_count from student group by course order by count(*) desc;
+---Step 4: Ordering & Limiting
+select* from student order by created_at desc limit 3;
+select* from student where course='Computer Science' order by age desc;
+
