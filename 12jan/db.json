@@ -1,0 +1,16 @@
+{
+  "user": [
+    {
+      "id": 2,
+      "name": "Prachi",
+      "course": "Biology",
+      "year": 9
+    },
+    {
+      "id": 3,
+      "name": "Prachi",
+      "course": "Biology",
+      "year": 9
+    }
+  ]
+}
