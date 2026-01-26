@@ -1,0 +1,22 @@
+create table users(id serial primary key,name text not null,email text,created_at timestamp default current_timestamp);
+create table orders(id serial primary key,user_id int,amount numeric(10,2),status text,created_at timestamp default current_timestamp,foreign key(user_id) references users(id) on delete cascade on update cascade);
+insert into users (name, email)
+values ('Prachi Mehta', 'prachi@gmail.com');
+insert into orders (user_id, amount, status)
+values (6, 450.00, 'cancelled');
+
+
+select* from orders --fetch all order
+select* from users --fetch all user
+select* from  orders where user_id=1;
+select name,email,users.id from  users inner join  orders on orders.user_id=users.id group by name,email,users.id having count(orders.id)>1;
+select users.id,name,sum(amount) from users inner join orders on orders.user_id=users.id group by name,users.id order by users.id asc;
+update users set email='prachiKumari@dev.com' where id=6;
+update orders set status='Delivered to Home' where user_id=3;
+delete from orders where user_id=3 and status='Delivered to Home';     ----delete one order of specific user
+delete from orders where user_id=3        ----delete all order of specific user     
+delete from users where id=4;             ----orders me bhi isi id se delete ho jayega orders saara
+
+
+Question: Why should orders not be stored inside the users table? 
+beacuse it will mess up the order(like updating , deleting) and user table  if any orders will be cancell it will reflect on user table if merge so it is for easy maintaince we make seperate table and using reference we connect them
